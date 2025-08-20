@@ -36,6 +36,9 @@ export default function Footer() {
             <h6 className="text-uppercase fw-bold mb-3">Contact</h6>
             <p className="small mb-1">info@ddsa-live.com</p>
             <p className="small">+234 703 5874 823</p>
+            <p className="small">Address:
+16B, Akintan Street, Dideolu Estate, Ogba, Ikeja, Lagos. Nigeria. 
+</p>
           </div>
 
           <div className="col-md-3 text-md-end">
