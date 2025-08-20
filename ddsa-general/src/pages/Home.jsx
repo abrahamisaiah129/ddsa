@@ -1,150 +1,21 @@
 // eslint-disable-next-line no-unused-vars
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ShieldCheck, Users, Rocket, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, ShieldCheck, Users, Rocket, Cpu, Globe, Banknote } from "lucide-react";
 import imgHero from '../assets/Team work-pana.svg'
 import imgSection from '../assets/About us page-pana.svg'
 import techImg from "../assets/Digital transformation-pana.svg"
-import why from "../assets/Shrug-pana.svg"
-import img1 from  "../assets/Team work-pana.svg";
-import img2 from  "../assets/Creative team-pana.svg";
-import img3 from  "../assets/Partnership-pana.svg";
+ import why from "../assets/Shrug-pana.svg"
+ import img1 from  "../assets/Team work-pana.svg";
+ import img2 from "../assets/Creative team-pana.svg";
+import img3 from "../assets/Partnership-pana.svg";
+import SectorsOverview from "./sectorOverview";
 
-// hero images
+// https://storyset.com/illustration/team-work/pana
 const heroImg = imgHero;
 const sectionImg = imgSection;
-
-/** ======= SECTORS (FULL LIST WITH SUB-CATEGORIES) ======= */
-const sectors = [
-  {
-    id: 1,
-    name: "Agriculture & Livestock",
-    icon: "fas fa-tractor",
-    items: ["Crop farming", "Animal husbandry", "Fisheries & aquaculture", "Agro-processing"]
-  },
-  {
-    id: 2,
-    name: "Banking & Financial Services",
-    icon: "fas fa-university",
-    items: ["Commercial banks", "Microfinance banks", "Fintech & mobile money", "Capital markets"]
-  },
-  {
-    id: 3,
-    name: "Insurance (Insurtech)",
-    icon: "fas fa-shield-alt",
-    items: ["Life insurance", "General insurance", "Health insurance", "Micro-insurance"]
-  },
-  {
-    id: 4,
-    name: "Pension Industry",
-    icon: "fas fa-piggy-bank",
-    items: ["Pension Fund Administrators (PFAs)", "Pension Fund Custodians (PFCs)", "Retirement Savings Accounts (RSA)"]
-  },
-  {
-    id: 5,
-    name: "Oil & Gas / Energy",
-    icon: "fas fa-oil-can",
-    items: ["Upstream (exploration & production)", "Midstream (processing, transport)", "Downstream (distribution & marketing)", "Renewable energy & power generation"]
-  },
-  {
-    id: 6,
-    name: "Mining & Solid Minerals",
-    icon: "fas fa-gem",
-    items: ["Gold, coal, limestone, bitumen, iron ore, etc."]
-  },
-  {
-    id: 7,
-    name: "Real Estate & Construction",
-    icon: "fas fa-building",
-    items: ["Property development", "Housing", "Infrastructure construction", "Facility management"]
-  },
-  {
-    id: 8,
-    name: "Manufacturing & Industry",
-    icon: "fas fa-industry",
-    items: ["Cement, steel, and building materials", "Food & beverages", "Textiles, leather, and apparel", "Consumer goods"]
-  },
-  {
-    id: 9,
-    name: "Information & Communication Technology (ICT)",
-    icon: "fas fa-laptop-code",
-    items: ["Telecoms", "Software & app development", "Data services", "Digital platforms"]
-  },
-  {
-    id: 10,
-    name: "E-commerce & Retail Trade",
-    icon: "fas fa-shopping-cart",
-    items: ["Online marketplaces", "Wholesale & retail distribution"]
-  },
-  {
-    id: 11,
-    name: "Arts, Culture & Entertainment",
-    icon: "fas fa-film",
-    items: ["Nollywood (film)", "Music", "Theatre, fashion, cultural tourism"]
-  },
-  {
-    id: 12,
-    name: "Hospitality & Tourism",
-    icon: "fas fa-hotel",
-    items: ["Hotels, restaurants, resorts", "Domestic & international tourism"]
-  },
-  {
-    id: 13,
-    name: "Education",
-    icon: "fas fa-graduation-cap",
-    items: ["Basic, secondary, tertiary", "EdTech (digital learning platforms)", "Vocational & skills training"]
-  },
-  {
-    id: 14,
-    name: "Health & Wellness",
-    icon: "fas fa-heartbeat",
-    items: ["Hospitals, clinics", "Pharmaceuticals & biotech", "Telemedicine", "Health insurance"]
-  },
-  {
-    id: 15,
-    name: "Transportation & Logistics",
-    icon: "fas fa-truck",
-    items: ["Road, rail, air, maritime", "Delivery services", "Supply chain & warehousing"]
-  },
-  {
-    id: 16,
-    name: "Public Sector & Government Services",
-    icon: "fas fa-landmark",
-    items: ["Civil service", "Security & defense", "Public administration"]
-  },
-  {
-    id: 17,
-    name: "Non-Governmental Organizations (NGOs) & Social Impact",
-    icon: "fas fa-handshake-angle",
-    items: ["Humanitarian services", "Development projects", "Non-profits & donor agencies"]
-  },
-  {
-    id: 18,
-    name: "Verification & Compliance Services",
-    icon: "fas fa-id-card",
-    items: ["KYC (BVN/NIN)", "Utility/address verification", "Employment/asset verification", "Corporate records (CAC)"]
-  },
-  {
-    id: 19,
-    name: "Sports & Youth Development",
-    icon: "fas fa-futbol",
-    items: ["Football, athletics", "Sports academies & events"]
-  },
-  {
-    id: 20,
-    name: "Environmental & Waste Management",
-    icon: "fas fa-recycle",
-    items: ["Recycling", "Sanitation services", "Renewable energy"]
-  },
-];
+// the new linkhttps://storyset.com/illustration/team-work/pana
 
 export default function Home() {
-  const [openSector, setOpenSector] = useState(null);
-
-  const toggleSector = (id) => {
-    setOpenSector(openSector === id ? null : id);
-  };
-
   return (
     <>
       {/* HERO */}
@@ -161,13 +32,31 @@ export default function Home() {
                 Direct Digital Sales Agent
               </motion.h1>
               <motion.h2 
-                className="h3 fw-bold border-start border-danger mt-2 lead text-dark mt-2 border-start border-4 ps-3"
+                className="h3 fw-bold border-start border-danger mt-2 lead  text-dark mt-2 border-start border-4  ps-3"
                 initial={{ y: 30, opacity: 0 }} 
                 animate={{ y: 0, opacity: 1 }} 
                 transition={{ delay: 0.1, duration: 0.6 }}
               >
                 All-Sector Agent Network System
               </motion.h2>
+              {/* <motion.p 
+                className="lead fw-bold text-dark mt-2 border-start border-4  ps-3"
+                initial={{ y: 30, opacity: 0 }} 
+                animate={{ y: 0, opacity: 1 }} 
+                transition={{ delay: 0.2, duration: 0.6 }}
+              >
+                All Sectors. Many Agents. One Dashboard.
+              </motion.p> */}
+
+              {/* <motion.p 
+                className="mt-3 text-muted"
+                initial={{ y: 20, opacity: 0 }} 
+                animate={{ y: 0, opacity: 1 }} 
+                transition={{ delay: 0.3 }}
+              >
+                Empowering People. Driving Growth. Creating Jobs.<br/>
+                Vision: <strong>50M jobs in Nigeria</strong> & <strong>350M in Africa</strong> in 5 years.
+              </motion.p> */}
 
               <motion.div 
                 className="d-flex gap-2 mt-3"
@@ -175,9 +64,12 @@ export default function Home() {
                 animate={{ opacity: 1 }} 
                 transition={{ delay: 0.4 }}
               >
+                {/* <a href="/signup" className="btn btn-danger btn-lg"> */}
                 <a href="*" className="btn btn-danger btn-lg">
                   Become an Agent <ArrowRight size={18} className="ms-1" />
-                </a>
+                              </a>
+                              
+                {/* <a href="/partners" className="btn btn-outline-danger btn-lg"></a> */}
                 <a href="*" className="btn btn-outline-danger btn-lg">
                   Partner with Us
                 </a>
@@ -200,6 +92,26 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ADDITIONAL VISUAL BREAK */}
+      <section className="py-5">
+        {/* ADD THIS STYLISH LINE HERE */}
+        <div className="container">
+          <div className="bg-danger rounded-pill my-5 mx-auto" style={{ height: "4px", maxWidth: "100px" }}></div>
+        </div>
+
+          {/* <div className="container text-center">
+          <motion.img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop"
+            alt="DDSA Professional Network"
+            className="rounded-4 shadow-lg w-75"
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          />
+        </div> */}
       </section>
 
       {/* ABOUT */}
@@ -238,7 +150,7 @@ export default function Home() {
             ].map((c, i) => (
               <div key={i} className="col-md-4">
                 <motion.div
-                  className="card h-100 border-0 shadow-sm rounded-4"
+                  className="card h-100 border-0 shadow-sm hover-lift rounded-4"
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true, amount: 0.3 }}
@@ -257,60 +169,170 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTORS (COLLAPSIBLE) */}
-      <section id="sectors" className="py-5 bg-white">
-        <div className="container">
-          <h2 className="text-center mb-4 fw-bold text-danger">Our Sectors</h2>
+      {/* SECTORS */}
+     <section id="sectors" className="py-5 bg-light">
+  <div className="container">
+    <h2 className="fw-bold text-center mb-4">Sectors We Serve</h2>
+    <p className="text-center text-muted mb-4">
+      Banking & Microfinance, Insurance, Pensions, Agriculture & Livestock, Arts & Culture, E-commerce,
+      Hospitality & Tourism, Education, Health & Wellness, NGOs & Social Impact, Logistics, Real Estate,
+      Verifications… and more.
+    </p>
 
-          <div className="row g-4">
-            {sectors.map((sector, index) => (
-              <motion.div
-                key={sector.id}
-                className="col-md-6 col-lg-4"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true, amount: 0.2 }}
-              >
-                <div 
-                  className="card h-100 shadow-sm border-0 rounded-3 p-4"
-                  style={{ cursor: "pointer" }}
-                  onClick={() => toggleSector(sector.id)}
-                >
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div className="d-flex align-items-center gap-3">
-                      <i className={`${sector.icon} fa-2x text-danger`} />
-                      <h5 className="fw-bold mb-0 text-danger">{sector.name}</h5>
-                    </div>
-                    <motion.div
-                      animate={{ rotate: openSector === sector.id ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
+    <div className="row g-3 text-center">
+      {[
+        {
+          label: "Agriculture & Livestock",
+          icon: <Globe />,
+          items: ["Crop farming", "Animal husbandry", "Fisheries & aquaculture", "Agro-processing"],
+        },
+        {
+          label: "Banking & Financial Services",
+          icon: <Banknote />,
+          items: ["Commercial banks", "Microfinance banks", "Fintech & mobile money", "Capital markets"],
+        },
+        {
+          label: "Insurance (InsurTech)",
+          icon: <ShieldCheck />,
+          items: ["Life insurance", "General insurance", "Health insurance", "Micro-insurance"],
+        },
+        {
+          label: "Pension Industry",
+          icon: <Users />,
+          items: ["Pension Fund Administrators (PFAs)", "Pension Fund Custodians (PFCs)", "Retirement Savings Accounts (RSA)"],
+        },
+        {
+          label: "Oil & Gas / Energy",
+          icon: <Cpu />,
+          items: ["Upstream (exploration & production)", "Midstream (processing, transport)", "Downstream (distribution & marketing)", "Renewable energy & power generation"],
+        },
+        {
+          label: "Mining & Solid Minerals",
+          icon: <Cpu />,
+          items: ["Gold, coal, limestone, bitumen, iron ore, etc."],
+        },
+        {
+          label: "Real Estate & Construction",
+          icon: <Cpu />,
+          items: ["Property development", "Housing", "Infrastructure construction", "Facility management"],
+        },
+        {
+          label: "Manufacturing & Industry",
+          icon: <Cpu />,
+          items: ["Cement, steel, and building materials", "Food & beverages", "Textiles, leather, and apparel", "Consumer goods"],
+        },
+        {
+          label: "Information & Communication Technology (ICT)",
+          icon: <Cpu />,
+          items: ["Telecoms", "Software & app development", "Data services", "Digital platforms"],
+        },
+        {
+          label: "E-commerce & Retail Trade",
+          icon: <Rocket />,
+          items: ["Online marketplaces", "Wholesale & retail distribution"],
+        },
+        {
+          label: "Arts, Culture & Entertainment",
+          icon: <Cpu />,
+          items: ["Nollywood (film)", "Music", "Theatre, fashion, cultural tourism"],
+        },
+        {
+          label: "Hospitality & Tourism",
+          icon: <Cpu />,
+          items: ["Hotels, restaurants, resorts", "Domestic & international tourism"],
+        },
+        {
+          label: "Education",
+          icon: <Cpu />,
+          items: ["Basic, secondary, tertiary", "EdTech (digital learning platforms)", "Vocational & skills training"],
+        },
+        {
+          label: "Health & Wellness",
+          icon: <ShieldCheck />,
+          items: ["Hospitals, clinics", "Pharmaceuticals & biotech", "Telemedicine", "Health insurance"],
+        },
+        {
+          label: "Transportation & Logistics",
+          icon: <Cpu />,
+          items: ["Road, rail, air, maritime", "Delivery services", "Supply chain & warehousing"],
+        },
+        {
+          label: "Public Sector & Government Services",
+          icon: <Cpu />,
+          items: ["Civil service", "Security & defense", "Public administration"],
+        },
+        {
+          label: "Non-Governmental Organizations (NGOs) & Social Impact",
+          icon: <Cpu />,
+          items: ["Humanitarian services", "Development projects", "Non-profits & donor agencies"],
+        },
+        {
+          label: "Verification & Compliance Services",
+          icon: <Cpu />,
+          items: ["KYC (BVN/NIN)", "Utility/address verification", "Employment/asset verification", "Corporate records (CAC)"],
+        },
+        {
+          label: "Sports & Youth Development",
+          icon: <Cpu />,
+          items: ["Football, athletics", "Sports academies & events"],
+        },
+        {
+          label: "Environmental & Waste Management",
+          icon: <Cpu />,
+          items: ["Recycling", "Sanitation services", "Renewable energy"],
+        },
+      ].map((s, i) => (
+        <div key={i} className="col-6 col-md-4 col-lg-3">
+          <motion.div
+            className="p-3 border rounded-4 bg-white shadow-sm h-100"
+            initial={{ scale: 0.95, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <div className="text-danger mb-2 d-flex justify-content-center">{s.icon}</div>
+            <div className="small fw-semibold mb-2">{s.label}</div>
+
+            {/* Accordion Toggle */}
+            {s.items && s.items.length > 0 && (
+              <div className="accordion accordion-flush" id={`accordion-${i}`}>
+                <div className="accordion-item border-0">
+                  <h2 className="accordion-header">
+                    <button
+                      className="accordion-button collapsed small py-1"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target={`#collapse-${i}`}
+                      aria-expanded="false"
+                      aria-controls={`collapse-${i}`}
                     >
-                      <ChevronDown className="text-danger" />
-                    </motion.div>
-                  </div>
-
-                  <AnimatePresence>
-                    {openSector === sector.id && (
-                      <motion.ul
-                        className="list-unstyled small text-muted mt-3 mb-0"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4 }}
-                      >
-                        {sector.items.map((item, i) => (
-                          <li key={i}>• {item}</li>
+                      View More
+                    </button>
+                  </h2>
+                  <div
+                    id={`collapse-${i}`}
+                    className="accordion-collapse collapse"
+                    data-bs-parent={`#accordion-${i}`}
+                  >
+                    <div className="accordion-body small text-start">
+                      <ul className="list-unstyled mb-0">
+                        {s.items.map((item, idx) => (
+                          <li key={idx} className="text-muted">
+                            • {item}
+                          </li>
                         ))}
-                      </motion.ul>
-                    )}
-                  </AnimatePresence>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            )}
+          </motion.div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* TECHNOLOGY */}
       <section id="technology" className="py-5">
@@ -325,6 +347,9 @@ export default function Home() {
                 <li>Gamified agent dashboard.</li>
                 <li>Omni-channel access (Web, Mobile, WhatsApp).</li>
               </ul>
+              {/* <a href="/technology" className="btn btn-outline-danger">
+                See the Tech
+              </a> */}
             </div>
             <div className="col-lg-6">
               <img
@@ -357,6 +382,7 @@ export default function Home() {
                 <li>Scalable, secure technology.</li>
                 <li>Current valuation: <b>$2M</b> (high-growth trajectory).</li>
               </ul>
+              {/* <a href="/why" className="btn btn-danger">Learn More</a> */}
             </div>
           </div>
         </div>
@@ -370,7 +396,9 @@ export default function Home() {
             🌐 www.ddsa-live.com &nbsp;•&nbsp; 📧 info@ddsa-live.com &nbsp;•&nbsp; 📍 Lagos, Nigeria
           </p>
           <div className="d-flex justify-content-center gap-2">
+            {/* <a href="/partners" className="btn btn-outline-danger">Partner with DDSA</a> */}
             <a href="*" className="btn btn-outline-danger">Partner with DDSA</a>
+            {/* <a href="/signup" className="btn btn-danger">Become an Agent</a> */}
             <a href="*" className="btn btn-danger">Become an Agent</a>
           </div>
         </div>
