@@ -1,0 +1,40 @@
+/* src/styles/auth.css */
+.auth-wrap {
+  position: relative;
+  min-height: 100vh;
+  background: #fff;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.brand { color: var(--ddsa-red); }
+
+.side-panel {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 420px;
+  background: #f8f9fa;
+}
+.side-panel .img-cover { width: 100%; height: 100%; object-fit: cover; display: block; }
+.side-panel .overlay { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(217, 4, 41, 0.12), rgba(0,0,0,0.0) 50%); }
+.panel-content { position: absolute; inset: 0; padding: 2rem; display: grid; align-content: end; color: #111; }
+
+.auth-card { border-radius: 20px; background: rgba(255,255,255,0.96); backdrop-filter: blur(6px); }
+
+/* Role option cards */
+.option-card { border: 1px solid #eee; background: #fff; border-radius: 16px; padding: 14px 16px; min-width: 220px; text-align: left; transition: box-shadow .2s ease, border-color .2s ease; cursor: pointer; }
+.option-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.06); }
+.option-card.active { border-color: rgba(217, 4, 41, 0.35); box-shadow: 0 8px 30px rgba(217,4,41,0.12); }
+.option-icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: rgba(217, 4, 41, 0.08); font-size: 20px; }
+
+/* Background bubbles */
+.bubble { position: absolute; border-radius: 999px; pointer-events: none; z-index: 0; }
+.bubble-sm { width: 160px; height: 160px; top: -40px; left: -40px; background: rgba(217, 4, 41, 0.06); filter: blur(2px); }
+.bubble-lg { width: 260px; height: 260px; right: -60px; bottom: -60px; background: rgba(217, 4, 41, 0.08); filter: blur(3px); }
+
+/* small screens */
+@media (max-width: 576px) {
+  .panel-content { align-content: end; padding: 1.25rem; }
+  .option-card { min-width: 100%; }
+}

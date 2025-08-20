@@ -1,0 +1,32 @@
+.navbar .custom-nav-link {
+  position: relative;
+  font-weight: 600;
+  padding: .5rem .75rem;
+  color: #333;
+}
+
+.navbar .custom-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background: var(--ddsa-red);
+  transition: width .25s ease, left .25s ease;
+  border-radius: 2px;
+}
+
+.navbar .custom-nav-link:hover::after,
+.navbar .custom-nav-link.active::after { width: 70%; left: 50%; }
+
+.custom-btn { min-width: 96px; }
+
+/* toggle eye (auth) */
+.toggle-eye { position: absolute; top: 50%; right: .5rem; transform: translateY(-50%); color: var(--ddsa-red); }
+
+/* responsive spacing */
+@media (max-width: 991.98px) {
+  .navbar .d-flex { margin-top: .75rem; }
+}

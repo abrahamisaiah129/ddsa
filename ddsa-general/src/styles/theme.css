@@ -1,0 +1,11 @@
+:root {
+  --ddsa-red: #E70A02;
+}
+
+/* small helpers */
+.bg-opacity-85 { backdrop-filter: saturate(180%) blur(6px); }
+
+.hover-lift { transition: transform .25s ease, box-shadow .25s ease; }
+.hover-lift:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0,0,0,.08) !important; }
+
+.object-fit-cover { object-fit: cover; }
