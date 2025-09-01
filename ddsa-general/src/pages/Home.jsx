@@ -1,408 +1,353 @@
+import React, { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Users, Rocket, Cpu, Globe, Banknote } from "lucide-react";
-import imgHero from '../assets/Team work-pana.svg'
-import imgSection from '../assets/About us page-pana.svg'
-import techImg from "../assets/Digital transformation-pana.svg"
- import why from "../assets/Shrug-pana.svg"
- import img1 from  "../assets/Team work-pana.svg";
- import img2 from "../assets/Creative team-pana.svg";
-import img3 from "../assets/Partnership-pana.svg";
-import SectorsOverview from "./sectorOverview";
+import { Briefcase, Users, Building } from "lucide-react";
 
-// https://storyset.com/illustration/team-work/pana
-const heroImg = imgHero;
-const sectionImg = imgSection;
-// the new linkhttps://storyset.com/illustration/team-work/pana
+import heroImg from "../assets/Office work-amico.svg";
+import aboutImg from "../assets/Business deal-amico.svg";
+import benefitsImg from "../assets/Team work-amico.svg";
+import contactImg from "../assets/Contact us-amico.svg";
+import sectorsImg from "../assets/Project-Stages-01.svg";
+import PartnerImg from "../assets/Partnership-pana.svg";
+
+// Animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 export default function Home() {
+  const [expanded, setExpanded] = useState(false);
+  const visibleCount = 6;
+
+  const sectorsList = [
+    "Banking & Microfinance",
+    "Insurance (InsureTech)",
+    "Pensions",
+    "Agriculture & Livestock",
+    "Arts & Culture",
+    "E-commerce",
+    "Hospitality & Tourism",
+    "Education",
+    "Health & Wellness",
+    "NGOs & Social Impact",
+    "Logistics",
+    "Real Estate",
+    "Verifications",
+  ];
+
   return (
-    <>
-      {/* HERO */}
-      <section id="home" className="py-5">
+    <div className="w-100 overflow-hidden">
+      {/* Hero Section */}
+      <section id="hero" className="bg-danger text-white py-5">
         <div className="container">
-          <div className="row align-items-center g-4">
-            <div className="col-lg-6">
-              <motion.h1 
-                className="display-5 fw-bold text-danger"
-                initial={{ y: 30, opacity: 0 }} 
-                animate={{ y: 0, opacity: 1 }} 
-                transition={{ duration: 0.6 }}
-              >
-                Direct Digital Sales Agent
-              </motion.h1>
-              <motion.h2 
-                className="h3 fw-bold border-start border-danger mt-2 lead  text-dark mt-2 border-start border-4  ps-3"
-                initial={{ y: 30, opacity: 0 }} 
-                animate={{ y: 0, opacity: 1 }} 
-                transition={{ delay: 0.1, duration: 0.6 }}
-              >
-                All-Sector Agent Network System
-              </motion.h2>
-              {/* <motion.p 
-                className="lead fw-bold text-dark mt-2 border-start border-4  ps-3"
-                initial={{ y: 30, opacity: 0 }} 
-                animate={{ y: 0, opacity: 1 }} 
-                transition={{ delay: 0.2, duration: 0.6 }}
-              >
-                All Sectors. Many Agents. One Dashboard.
-              </motion.p> */}
-
-              {/* <motion.p 
-                className="mt-3 text-muted"
-                initial={{ y: 20, opacity: 0 }} 
-                animate={{ y: 0, opacity: 1 }} 
-                transition={{ delay: 0.3 }}
-              >
-                Empowering People. Driving Growth. Creating Jobs.<br/>
-                Vision: <strong>50M jobs in Nigeria</strong> & <strong>350M in Africa</strong> in 5 years.
-              </motion.p> */}
-
-              <motion.div 
-                className="d-flex gap-2 mt-3"
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
-                transition={{ delay: 0.4 }}
-              >
-                {/* <a href="/signup" className="btn btn-danger btn-lg"> */}
-                <a href="*" className="btn btn-danger btn-lg">
-                  Become an Agent <ArrowRight size={18} className="ms-1" />
-                              </a>
-                              
-                {/* <a href="/partners" className="btn btn-outline-danger btn-lg"></a> */}
-                <a href="*" className="btn btn-outline-danger btn-lg">
-                  Partner with Us
-                </a>
-              </motion.div>
-            </div>
-
-            <div className="col-lg-6">
-              <motion.div 
-                initial={{ x: 40, opacity: 0 }} 
-                animate={{ x: 0, opacity: 1 }} 
-                transition={{ duration: 0.6 }}
-                className="rounded-4 overflow-hidden shadow-lg"
-              >
-                <img 
-                  src={heroImg} 
-                  alt="Agents" 
-                  className="w-100 h-100 object-fit-cover"
-                />
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ADDITIONAL VISUAL BREAK */}
-      <section className="py-5">
-        {/* ADD THIS STYLISH LINE HERE */}
-        <div className="container">
-          <div className="bg-danger rounded-pill my-5 mx-auto" style={{ height: "4px", maxWidth: "100px" }}></div>
-        </div>
-
-          {/* <div className="container text-center">
-          <motion.img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop"
-            alt="DDSA Professional Network"
-            className="rounded-4 shadow-lg w-75"
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          />
-        </div> */}
-      </section>
-
-      {/* ABOUT */}
-      <section id="aboutus" className="py-5 bg-light">
-        <div className="container">
-          <div className="row g-4 align-items-center">
-            <div className="col-lg-6">
-              <img src={sectionImg} alt="About DDSA" className="rounded-4 w-100 shadow-sm" />
-            </div>
-            <div className="col-lg-6">
-              <h2 className="fw-bold mb-3">About DDSA</h2>
-              <p className="text-muted">
-                DDSA (Direct Digital Sales Agent), developed by <b>D-Degree Digital Hub</b>, is Africa’s first
-                multi-sector digital agent system. We combine:
+          <div className="row align-items-center">
+            <motion.div
+              className="col-md-6 mb-4"
+              initial="hidden"
+              whileInView="show"
+              variants={fadeInUp}
+            >
+              <h1 className="display-3 fw-bold">DDSA</h1>
+              <h1 className="display-5 fw-bold">
+                Direct Digital Sales Agent 🌍
+              </h1>
+              <p className="lead">
+                Empowering People. Driving Growth. Creating Jobs.
+                <br />
+                Africa’s First All-Sector Agent Network System:
+                <br />
+                <strong>All Sectors. Many Agents. One Dashboard.</strong>
               </p>
-              <ul className="list-unstyled lh-lg">
-                <li>• Technology – Omni URL, dashboards, WhatsApp.</li>
-                <li>• Nationwide Agent Network – verified, trained, incentivized.</li>
-                <li>• Gamification & Rewards – productivity and accountability.</li>
-              </ul>
-              <p className="mb-0">Trusted by governments, banks, insurers, MFIs and enterprises.</p>
-            </div>
+              <button className="btn btn-light text-danger fw-semibold shadow rounded-pill mx-3 hover-red">
+                Become an Agent
+              </button>
+              <button className="btn btn-danger text-light fw-semibold shadow rounded-pill mx-3 hover-white">
+                Partner with Us
+              </button>
+            </motion.div>
+
+            <motion.div
+              className="col-md-6"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <img src={heroImg} alt="Agents Hero" className="img-fluid" />
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* BENEFITS */}
-      <section id="benefits" className="py-5">
+      {/* About Us */}
+      <section id="about" className="py-5 bg-light">
         <div className="container">
-          <h2 className="fw-bold text-center mb-4">Why Agents, Partners & Governments Love DDSA</h2>
-          <div className="row g-4">
-            {[
-              { icon: <Users />, title: "Agents Earn Sustainably", text: "Multi-sector income streams with gamified rewards." ,image:img1},
-              { icon: <Rocket />, title: "Partners Scale Faster", text: "Nationwide outreach, verified onboarding & acquisitions.",image:img2},
-              { icon: <ShieldCheck />, title: "Governments Deepen Inclusion", text: "Citizen engagement & benefits distribution at scale." ,image:img3},
-            ].map((c, i) => (
-              <div key={i} className="col-md-4">
-                <motion.div
-                  className="card h-100 border-0 shadow-sm hover-lift rounded-4"
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ delay: 0.05 * i }}
-                > 
-                  <img src={c.image} className="card-img-top rounded-top-4" alt={c.title} />
-                  <div className="card-body">
-                    <div className="text-danger mb-2">{c.icon}</div>
-                    <h5 className="card-title">{c.title}</h5>
-                    <p className="card-text text-muted">{c.text}</p>
-                  </div>
-                </motion.div>
+          <div className="row align-items-center g-5">
+            <motion.div
+              className="col-md-6"
+              initial="hidden"
+              whileInView="show"
+              variants={fadeInUp}
+            >
+              <img src={aboutImg} alt="About DDSA" className="img-fluid" />
+            </motion.div>
+            <motion.div
+              className="col-md-6"
+              initial="hidden"
+              whileInView="show"
+              variants={fadeInUp}
+            >
+              <h2 className="fw-bold mb-3">About Us</h2>
+              <p>
+                DDSA (Direct Digital Sales Agent), developed by D-Degree Digital
+                Hub, is Africa’s first multi-sector digital agent system.
+              </p>
+              <div className="d-flex flex-wrap gap-2 mt-3">
+                <span className="badge rounded-pill bg-danger-subtle text-danger fw-semibold">
+                  Technology – Omni URL, dashboards, WhatsApp integration
+                </span>
+                <span className="badge rounded-pill bg-danger-subtle text-danger fw-semibold">
+                  Nationwide Agent Network – trained & incentivized
+                </span>
+                <span className="badge rounded-pill bg-danger-subtle text-danger fw-semibold">
+                  Gamification & Rewards – accountability & productivity
+                </span>
               </div>
-            ))}
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* SECTORS */}
-     <section id="sectors" className="py-5 bg-light">
-  <div className="container">
-    <h2 className="fw-bold text-center mb-4">Sectors We Serve</h2>
-    <p className="text-center text-muted mb-4">
-      Banking & Microfinance, Insurance, Pensions, Agriculture & Livestock, Arts & Culture, E-commerce,
-      Hospitality & Tourism, Education, Health & Wellness, NGOs & Social Impact, Logistics, Real Estate,
-      Verifications… and more.
-    </p>
+      <section id="sectors" className="py-5 bg-light">
+        <div className="container">
+          <div className="row align-items-center flex-md-row-reverse">
+            <div className="col-md-6">
+              <motion.h2
+                className="fw-bold text-danger mb-4"
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="show"
+              >
+                Sectors We Support
+              </motion.h2>
 
-    <div className="row g-3 text-center">
-      {[
-        {
-          label: "Agriculture & Livestock",
-          icon: <Globe />,
-          items: ["Crop farming", "Animal husbandry", "Fisheries & aquaculture", "Agro-processing"],
-        },
-        {
-          label: "Banking & Financial Services",
-          icon: <Banknote />,
-          items: ["Commercial banks", "Microfinance banks", "Fintech & mobile money", "Capital markets"],
-        },
-        {
-          label: "Insurance (InsurTech)",
-          icon: <ShieldCheck />,
-          items: ["Life insurance", "General insurance", "Health insurance", "Micro-insurance"],
-        },
-        {
-          label: "Pension Industry",
-          icon: <Users />,
-          items: ["Pension Fund Administrators (PFAs)", "Pension Fund Custodians (PFCs)", "Retirement Savings Accounts (RSA)"],
-        },
-        {
-          label: "Oil & Gas / Energy",
-          icon: <Cpu />,
-          items: ["Upstream (exploration & production)", "Midstream (processing, transport)", "Downstream (distribution & marketing)", "Renewable energy & power generation"],
-        },
-        {
-          label: "Mining & Solid Minerals",
-          icon: <Cpu />,
-          items: ["Gold, coal, limestone, bitumen, iron ore, etc."],
-        },
-        {
-          label: "Real Estate & Construction",
-          icon: <Cpu />,
-          items: ["Property development", "Housing", "Infrastructure construction", "Facility management"],
-        },
-        {
-          label: "Manufacturing & Industry",
-          icon: <Cpu />,
-          items: ["Cement, steel, and building materials", "Food & beverages", "Textiles, leather, and apparel", "Consumer goods"],
-        },
-        {
-          label: "Information & Communication Technology (ICT)",
-          icon: <Cpu />,
-          items: ["Telecoms", "Software & app development", "Data services", "Digital platforms"],
-        },
-        {
-          label: "E-commerce & Retail Trade",
-          icon: <Rocket />,
-          items: ["Online marketplaces", "Wholesale & retail distribution"],
-        },
-        {
-          label: "Arts, Culture & Entertainment",
-          icon: <Cpu />,
-          items: ["Nollywood (film)", "Music", "Theatre, fashion, cultural tourism"],
-        },
-        {
-          label: "Hospitality & Tourism",
-          icon: <Cpu />,
-          items: ["Hotels, restaurants, resorts", "Domestic & international tourism"],
-        },
-        {
-          label: "Education",
-          icon: <Cpu />,
-          items: ["Basic, secondary, tertiary", "EdTech (digital learning platforms)", "Vocational & skills training"],
-        },
-        {
-          label: "Health & Wellness",
-          icon: <ShieldCheck />,
-          items: ["Hospitals, clinics", "Pharmaceuticals & biotech", "Telemedicine", "Health insurance"],
-        },
-        {
-          label: "Transportation & Logistics",
-          icon: <Cpu />,
-          items: ["Road, rail, air, maritime", "Delivery services", "Supply chain & warehousing"],
-        },
-        {
-          label: "Public Sector & Government Services",
-          icon: <Cpu />,
-          items: ["Civil service", "Security & defense", "Public administration"],
-        },
-        {
-          label: "Non-Governmental Organizations (NGOs) & Social Impact",
-          icon: <Cpu />,
-          items: ["Humanitarian services", "Development projects", "Non-profits & donor agencies"],
-        },
-        {
-          label: "Verification & Compliance Services",
-          icon: <Cpu />,
-          items: ["KYC (BVN/NIN)", "Utility/address verification", "Employment/asset verification", "Corporate records (CAC)"],
-        },
-        {
-          label: "Sports & Youth Development",
-          icon: <Cpu />,
-          items: ["Football, athletics", "Sports academies & events"],
-        },
-        {
-          label: "Environmental & Waste Management",
-          icon: <Cpu />,
-          items: ["Recycling", "Sanitation services", "Renewable energy"],
-        },
-      ].map((s, i) => (
-        <div key={i} className="col-6 col-md-4 col-lg-3">
-          <motion.div
-            className="p-3 border rounded-4 bg-white shadow-sm h-100"
-            initial={{ scale: 0.95, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <div className="text-danger mb-2 d-flex justify-content-center">{s.icon}</div>
-            <div className="small fw-semibold mb-2">{s.label}</div>
-
-            {/* Accordion Toggle */}
-            {s.items && s.items.length > 0 && (
-              <div className="accordion accordion-flush" id={`accordion-${i}`}>
-                <div className="accordion-item border-0">
-                  <h2 className="accordion-header">
-                    <button
-                      className="accordion-button collapsed small py-1"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target={`#collapse-${i}`}
-                      aria-expanded="false"
-                      aria-controls={`collapse-${i}`}
-                    >
-                      View More
-                    </button>
-                  </h2>
-                  <div
-                    id={`collapse-${i}`}
-                    className="accordion-collapse collapse"
-                    data-bs-parent={`#accordion-${i}`}
+              <ul className="list-unstyled">
+                {(expanded
+                  ? sectorsList
+                  : sectorsList.slice(0, visibleCount)
+                ).map((sector, i) => (
+                  <motion.li
+                    key={i}
+                    className="mb-2 badge rounded-pill p-2 px-3 fw-bolder fs-6 bg-danger text-white mx-2"
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="show"
+                    transition={{ delay: i * 0.05 }}
                   >
-                    <div className="accordion-body small text-start">
-                      <ul className="list-unstyled mb-0">
-                        {s.items.map((item, idx) => (
-                          <li key={idx} className="text-muted">
-                            • {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+                    {sector}
+                  </motion.li>
+                ))}
+              </ul>
+
+              {sectorsList.length > visibleCount && (
+                <button
+                  className="btn btn-outline-danger btn-sm mt-2"
+                  onClick={() => setExpanded(!expanded)}
+                >
+                  {expanded ? "Show less" : "Show more"}
+                </button>
+              )}
+            </div>
+
+            <div className="col-md-6 text-center mb-4 mb-md-0">
+              <motion.img
+                src={sectorsImg}
+                alt="Sectors"
+                className="img-fluid"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stakeholders */}
+      <section id="stakeholders" className="py-5 bg-light">
+        <div className="container">
+          <div className="row text-center g-4">
+            {[
+              {
+                icon: <Briefcase size={36} className="text-danger mb-3" />,
+                title: "For Client Partners",
+                desc: "Expand inclusion, onboard millions, API integration & dashboards.",
+              },
+              {
+                icon: <Building size={36} className="text-danger mb-3" />,
+                title: "For Governments",
+                desc: "Mass jobs, citizen engagement, social benefits & inclusion.",
+              },
+              {
+                icon: <Users size={36} className="text-danger mb-3" />,
+                title: "For Citizens",
+                desc: "Banking, insurance, loans, pensions, verifications at your doorstep.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                className="col-md-4"
+                initial="hidden"
+                whileInView="show"
+                variants={fadeInUp}
+              >
+                <div className="p-4 bg-white rounded-4 shadow-sm h-100">
+                  <div>{item.icon}</div>
+                  <h5 className="fw-bold">{item.title}</h5>
+                  <p className="text-muted small mt-2">{item.desc}</p>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partnerships */}
+      <section id="partnerships" className="py-5 bg-white">
+        <div className="container">
+          <div className="row align-items-center g-5">
+            {/* Illustration (left side) */}
+            <motion.div
+              className="col-md-6 text-center"
+              initial="hidden"
+              whileInView="show"
+              variants={fadeInUp}
+            >
+              <img
+                src={PartnerImg}
+                alt="Partnership Illustration"
+                className="img-fluid"
+              />
+            </motion.div>
+
+            {/* Partner badges (right side) */}
+            <motion.div
+              className="col-md-6 text-center text-md-start"
+              initial="hidden"
+              whileInView="show"
+              variants={fadeInUp}
+            >
+              <h2 className="fw-bold mb-4 text-danger">Our Partnerships</h2>
+              <p className="mb-4 text-muted">
+                We collaborate with trusted partners across sectors to drive
+                innovation, create jobs, and expand financial inclusion in
+                Africa.
+              </p>
+              <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
+                {[
+                  "Federal Government (NDE)",
+                  "Ecobank",
+                  "Wema",
+                  "SunTrust",
+                  "Premium Trust",
+                  "FCMB",
+                  "CHI Insurance",
+                  "More…",
+                ].map((partner, i) => (
+                  <span
+                    key={i}
+                    className="badge rounded-pill bg-danger-subtle text-danger fw-semibold px-3 py-2"
+                  >
+                    {partner}
+                  </span>
+                ))}
               </div>
-            )}
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
-      ))}
+      </section>
+
+      {/* Technology */}
+      <section id="technology" className="py-5 bg-light">
+        <div className="container">
+          <div className="row align-items-center g-5">
+            <motion.div
+              className="col-md-6"
+              initial="hidden"
+              whileInView="show"
+              variants={fadeInUp}
+            >
+              <img
+                src={benefitsImg}
+                alt="DDSA Benefits"
+                className="img-fluid"
+              />
+            </motion.div>
+            <motion.div
+              className="col-md-6"
+              initial="hidden"
+              whileInView="show"
+              variants={fadeInUp}
+            >
+              <h2 className="fw-bold mb-3">
+                Technology & Innovation – Why DDSA?
+              </h2>
+              <div className="d-flex flex-wrap gap-2">
+                {[
+                  "Omni URL & CICO enablement",
+                  "Geo-tagged verifications",
+                  "Real-time analytics",
+                  "Gamified dashboards",
+                  "Govt-backed trust",
+                  "Secure, scalable model",
+                ].map((tech, i) => (
+                  <span
+                    key={i}
+                    className="badge rounded-pill bg-danger-subtle text-danger fw-semibold px-3 py-2"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-5 bg-danger text-white">
+        <div className="container">
+          <div className="row align-items-center g-5">
+            <motion.div
+              className="col-md-6"
+              initial="hidden"
+              whileInView="show"
+              variants={fadeInUp}
+            >
+              <h2 className="fw-bold mb-3">Ready to Make an Impact?</h2>
+              <p>
+                Join DDSA as an Agent today and start transforming lives while
+                building your future.
+              </p>
+              <a
+                href="mailto:info@ddsa-live.com"
+                className="btn btn-light text-danger fw-semibold rounded-pill"
+              >
+                Contact Us
+              </a>
+            </motion.div>
+            <motion.div
+              className="col-md-6"
+              initial="hidden"
+              whileInView="show"
+              variants={fadeInUp}
+            >
+              <img src={contactImg} alt="Contact" className="img-fluid" />
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </div>
-  </div>
-</section>
-
-
-      {/* TECHNOLOGY */}
-      <section id="technology" className="py-5">
-        <div className="container">
-          <div className="row g-4 align-items-center">
-            <div className="col-lg-6">
-              <h2 className="fw-bold mb-3">Technology & Innovation</h2>
-              <ul className="text-muted lh-lg">
-                <li>Omni URL for all sectors.</li>
-                <li>CICO enablement for deposits/withdrawals.</li>
-                <li>Geo-tagged verifications.</li>
-                <li>Gamified agent dashboard.</li>
-                <li>Omni-channel access (Web, Mobile, WhatsApp).</li>
-              </ul>
-              {/* <a href="/technology" className="btn btn-outline-danger">
-                See the Tech
-              </a> */}
-            </div>
-            <div className="col-lg-6">
-              <img
-                className="rounded-4 w-100 shadow-sm"
-                src={techImg}
-                alt="Technology"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY DDSA */}
-      <section id="whyddsa" className="py-5 bg-light">
-        <div className="container">
-          <div className="row g-4 align-items-center">
-            <div className="col-lg-6">
-              <img
-                className="rounded-4 w-100 shadow-sm"
-                src={why}
-                alt="Why DDSA"
-              />
-            </div>
-            <div className="col-lg-6">
-              <h2 className="fw-bold mb-3">Why DDSA?</h2>
-              <ul className="text-muted lh-lg">
-                <li>Multi-sector revenue model.</li>
-                <li>Nationwide footprint — urban + rural.</li>
-                <li>Government-backed partnerships.</li>
-                <li>Scalable, secure technology.</li>
-                <li>Current valuation: <b>$2M</b> (high-growth trajectory).</li>
-              </ul>
-              {/* <a href="/why" className="btn btn-danger">Learn More</a> */}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section id="contact" className="py-5">
-        <div className="container">
-          <h2 className="fw-bold text-center mb-3">Contact Us</h2>
-          <p className="text-center text-muted mb-4">
-            🌐 www.ddsa-live.com &nbsp;•&nbsp; 📧 info@ddsa-live.com &nbsp;•&nbsp; 📍 Lagos, Nigeria
-          </p>
-          <div className="d-flex justify-content-center gap-2">
-            {/* <a href="/partners" className="btn btn-outline-danger">Partner with DDSA</a> */}
-            <a href="*" className="btn btn-outline-danger">Partner with DDSA</a>
-            {/* <a href="/signup" className="btn btn-danger">Become an Agent</a> */}
-            <a href="*" className="btn btn-danger">Become an Agent</a>
-          </div>
-        </div>
-      </section>
-    </>
   );
 }

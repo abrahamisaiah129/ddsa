@@ -1,0 +1,12 @@
+/* Light button hover → red background */
+.hover-red:hover {
+  background-color: #dc3545 !important; /* Bootstrap danger */
+  color: #fff !important;
+}
+
+/* Danger button hover → white background */
+.hover-white:hover {
+  background-color: #fff !important;
+  color: #dc3545 !important;
+  border: 1px solid #dc3545 !important;
+}
