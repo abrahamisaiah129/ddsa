@@ -112,8 +112,8 @@ export default function Footer() {
 
         <hr className="border-secondary my-4" />
         <p className="small text-center mb-0">
-          © {new Date().getFullYear()} D-Degree Digital Hub. All rights
-          reserved.
+          © {new Date().getFullYear()} 2025 Direct Digital Sales Agent Limited
+          (DDSAL). All rights reserved.
         </p>
       </div>
     </footer>

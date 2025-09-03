@@ -109,9 +109,16 @@ export default function Home() {
               >
                 All-Sector Agent Network System
               </motion.h2>
-
               <motion.p
-                className="mt-3 text-muted"
+                className=" mt-1 mx-3 fs-5 fw-bold text-danger"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                All Sectors, One Dashboard <br />
+              </motion.p>
+              <motion.p
+                className=" h5 fw-bold fs-5 mt-1 text-dark"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
@@ -213,9 +220,10 @@ export default function Home() {
             >
               <h2 className="fw-bold mb-3">About Us</h2>
               <p>
-                DDSA (Direct Digital Sales Agent), developed by Direct Digital
-                Sales Agent Limited (DDSAL), is Africa’s first multi-sector
-                digital agent system.
+                DDSA (Direct Digital Sales Agent), an application developed by
+                Direct Digital Sales Agent Limited (DDSAL), is Africa’s first
+                complete multi-sector digital financial inclusion agent network
+                system
               </p>
 
               <div className="row mt-4 g-3">
@@ -260,7 +268,7 @@ export default function Home() {
       {/* Achievements Section */}
       <section className="py-5 bg-white b" id="achievements">
         <div className="container text-center">
-          <h2 className="fw-bold text-danger mb-5">Our Achievements</h2>
+          <h2 className="fw-bold text-dark mb-5">Our Achievements</h2>
           <div className="row g-4">
             <div className="col-md-3 col-6">
               <Award size={40} className="text-danger mb-2" />
@@ -407,7 +415,7 @@ export default function Home() {
               whileInView="show"
               viewport={{ once: true }}
             >
-              <h2 className="fw-bold text-danger mb-3">Why DDSA?</h2>
+              <h2 className="fw-bold text-dark mb-3">Why DDSA?</h2>
               <div className="d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
                 {[
                   "Omni URL & CICO enablement",
@@ -450,8 +458,9 @@ export default function Home() {
       {/* PARTNERSHIPS & SERVICES */}
       <section className="bg-white py-5" id="services">
         <div className="container">
+          {/* Section Title */}
           <motion.h2
-            className="text-center fw-bold text-danger mb-5"
+            className="text-center fw-bold text-danger mb-4"
             variants={fadeInUp}
             initial="hidden"
             whileInView="show"
@@ -459,18 +468,24 @@ export default function Home() {
           >
             Partnerships & Services
           </motion.h2>
+          <p className="text-center text-muted mb-5 small">
+            Empowering organizations, governments, and citizens with trusted,
+            accessible, and inclusive services nationwide.
+          </p>
+
           <div className="row g-4">
             {/* Client Partners */}
             <div className="col-md-6 col-lg-3">
               <motion.div
-                className="card  rounded-3 border-top border-1 border-danger h-100"
+                className="card shadow-sm rounded-3 border-0 h-100"
+                whileHover={{ y: -5 }}
                 variants={fadeInUp}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
               >
                 <div className="card-body">
-                  <h5 className="card-title text-danger">
+                  <h5 className="card-title text-danger fw-semibold">
                     <i className="fas fa-handshake me-2"></i> Client Partners
                   </h5>
                   <motion.ul
@@ -489,18 +504,18 @@ export default function Home() {
                     ].map((text, i) => (
                       <motion.li
                         key={i}
-                        className="mb-2 small"
+                        className="mb-2 small text-muted d-flex align-items-start"
                         variants={itemVariants}
                       >
+                        <i className="fas fa-check-circle text-danger me-2 mt-1"></i>
                         {text}
                       </motion.li>
                     ))}
                   </motion.ul>
-                  <p className="mt-3 small text-danger">
-                    ✅ API integration & onboarding support.
-                    <br />✅ A dedicated Partner Dashboard to monitor
-                    performance.
-                    <br />✅ Transparent revenue sharing.
+                  <p className="mt-3 small text-muted">
+                    ✅ API integration & onboarding support. <br />
+                    ✅ A dedicated Partner Dashboard. <br />✅ Transparent
+                    revenue sharing.
                   </p>
                 </div>
               </motion.div>
@@ -509,14 +524,15 @@ export default function Home() {
             {/* Governments */}
             <div className="col-md-6 col-lg-3">
               <motion.div
-                className="card  rounded-3 border-top border-1 border-danger h-100"
+                className="card shadow-sm rounded-3 border-0 h-100"
+                whileHover={{ y: -5 }}
                 variants={fadeInUp}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
               >
                 <div className="card-body">
-                  <h5 className="card-title text-danger">
+                  <h5 className="card-title text-danger fw-semibold">
                     <i className="fas fa-landmark me-2"></i> Governments
                   </h5>
                   <motion.ul
@@ -534,9 +550,10 @@ export default function Home() {
                     ].map((text, i) => (
                       <motion.li
                         key={i}
-                        className="mb-2 small"
+                        className="mb-2 small text-muted d-flex align-items-start"
                         variants={itemVariants}
                       >
+                        <i className="fas fa-check-circle text-danger me-2 mt-1"></i>
                         {text}
                       </motion.li>
                     ))}
@@ -548,14 +565,15 @@ export default function Home() {
             {/* Citizens */}
             <div className="col-md-6 col-lg-3">
               <motion.div
-                className="card  rounded-3 border-top border-1 border-danger h-100"
+                className="card shadow-sm rounded-3 border-0 h-100"
+                whileHover={{ y: -5 }}
                 variants={fadeInUp}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
               >
                 <div className="card-body">
-                  <h5 className="card-title text-danger">
+                  <h5 className="card-title text-danger fw-semibold">
                     <i className="fas fa-users me-2"></i> Citizens
                   </h5>
                   <motion.ul
@@ -576,14 +594,15 @@ export default function Home() {
                     ].map((text, i) => (
                       <motion.li
                         key={i}
-                        className="mb-2 small"
+                        className="mb-2 small text-muted d-flex align-items-start"
                         variants={itemVariants}
                       >
+                        <i className="fas fa-check-circle text-danger me-2 mt-1"></i>
                         {text}
                       </motion.li>
                     ))}
                   </motion.ul>
-                  <p className="mt-3 small text-danger">
+                  <p className="mt-3 small text-muted">
                     All from your neighborhood agent, via mobile, Omni URL, or
                     WhatsApp.
                   </p>
@@ -594,14 +613,15 @@ export default function Home() {
             {/* Our Partnerships */}
             <div className="col-md-6 col-lg-3">
               <motion.div
-                className="card  rounded-3 border-top border-1 border-danger h-100"
+                className="card shadow-sm rounded-3 border-0 h-100"
+                whileHover={{ y: -5 }}
                 variants={fadeInUp}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
               >
                 <div className="card-body">
-                  <h5 className="card-title text-danger">
+                  <h5 className="card-title text-danger fw-semibold">
                     <i className="fas fa-building me-2"></i> Our Partnerships
                   </h5>
                   <motion.ul
@@ -619,9 +639,10 @@ export default function Home() {
                     ].map((text, i) => (
                       <motion.li
                         key={i}
-                        className="mb-2 small"
+                        className="mb-2 small text-muted d-flex align-items-start"
                         variants={itemVariants}
                       >
+                        <i className="fas fa-check-circle text-danger me-2 mt-1"></i>
                         {text}
                       </motion.li>
                     ))}
@@ -634,7 +655,7 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-5 bg-white text-danger">
+      <section id="contact" className="py-5 bg-white text-dark">
         <div className="container">
           <div className="row align-items-center g-5">
             {/* TEXT */}
@@ -701,9 +722,14 @@ export default function Home() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className="card border-2 border-danger-subtle shadow-sm h-100 p-3"
+                  className="card border-2 border-danger-subtle  shadow-sm h-100 p-3"
                 >
-                  <Quote size={32} className="text-danger mb-3" />
+                  <Quote
+                    fill="#dc3545"
+                    fillOpacity={0.5}
+                    size={32}
+                    className="text-danger mb-3 rotate-180"
+                  />
                   <p className="text-muted">"{t.text}"</p>
                   <div className="d-flex align-items-center justify-content-center mt-3">
                     {/* <img
