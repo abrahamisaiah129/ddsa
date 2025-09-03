@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Twitter, Facebook, Linkedin } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
 // eslint-disable-next-line no-unused-vars
@@ -33,10 +32,19 @@ export default function Footer() {
                 <ScrollMaybe to="home">Home</ScrollMaybe>
               </li>
               <li>
-                <ScrollMaybe to="benefits">Benefits</ScrollMaybe>
+                <ScrollMaybe to="about">About Us</ScrollMaybe>
               </li>
               <li>
-                <ScrollMaybe to="about">About Us</ScrollMaybe>
+                <ScrollMaybe to="achievements">Achievements</ScrollMaybe>
+              </li>
+              <li>
+                <ScrollMaybe to="sectors">Sectors</ScrollMaybe>
+              </li>
+              <li>
+                <ScrollMaybe to="technology">Technology</ScrollMaybe>
+              </li>
+              <li>
+                <ScrollMaybe to="services">Partnerships & Services</ScrollMaybe>
               </li>
               <li>
                 <ScrollMaybe to="contact">Contact</ScrollMaybe>
@@ -49,14 +57,14 @@ export default function Footer() {
             <h6 className="text-uppercase fw-bold mb-3">Policies</h6>
             <ul className="list-unstyled small d-grid gap-2">
               <li>
-                <Link to="/terms" className="link-light text-decoration-none">
+                <a href="/terms" className="link-light text-decoration-none">
                   Terms of Use
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/privacy" className="link-light text-decoration-none">
+                <a href="/privacy" className="link-light text-decoration-none">
                   Privacy Policy
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -86,7 +94,7 @@ export default function Footer() {
                 hoveredFooter === "partnerFooter"
                   ? "btn-danger text-light"
                   : "btn-outline-danger text-danger"
-              } fw-semibold mt-2`}
+              } fw-semibold mt-2 text-decoration-none`}
               onHoverStart={() => setHoveredFooter("partnerFooter")}
               onHoverEnd={() => setHoveredFooter(null)}
               whileHover={{
@@ -112,7 +120,7 @@ export default function Footer() {
 
         <hr className="border-secondary my-4" />
         <p className="small text-center mb-0">
-          © {new Date().getFullYear()} 2025 Direct Digital Sales Agent Limited
+          © {new Date().getFullYear()} Direct Digital Sales Agent Limited
           (DDSAL). All rights reserved.
         </p>
       </div>
