@@ -462,7 +462,7 @@ export default function Home() {
         <div className="container">
           {/* Section Title */}
           <motion.h2
-            className="text-center fw-bold text-danger mb-4"
+            className="text-center fw-bold text-dark mb-4"
             variants={fadeInUp}
             initial="hidden"
             whileInView="show"
@@ -490,6 +490,8 @@ export default function Home() {
                   <h5 className="card-title text-danger fw-semibold">
                     <i className="fas fa-handshake me-2"></i> Client Partners
                   </h5>
+
+                  {/* First 3 visible */}
                   <motion.ul
                     className="list-unstyled mt-3"
                     variants={listVariants}
@@ -503,22 +505,58 @@ export default function Home() {
                       "Drive contributions and new member enrollments at grassroots level.",
                       "National identity schemes, subsidy delivery, and social impact projects.",
                       "Nationwide verifications, onboarding, and customer acquisitions.",
-                    ].map((text, i) => (
-                      <motion.li
-                        key={i}
-                        className="mb-2 small text-muted d-flex align-items-start"
-                        variants={itemVariants}
-                      >
-                        <i className="fas fa-check-circle text-danger me-2 mt-1"></i>
-                        {text}
-                      </motion.li>
-                    ))}
+                    ]
+                      .slice(0, 3)
+                      .map((text, i) => (
+                        <motion.li
+                          key={i}
+                          className="mb-2 small text-muted d-flex align-items-start"
+                          variants={itemVariants}
+                        >
+                          <i className="fas fa-check-circle text-danger me-2 mt-1"></i>
+                          {text}
+                        </motion.li>
+                      ))}
                   </motion.ul>
-                  <p className="mt-3 small text-muted">
-                    ✅ API integration & onboarding support. <br />
-                    ✅ A dedicated Partner Dashboard. <br />✅ Transparent
-                    revenue sharing.
-                  </p>
+
+                  {/* Dropdown for remaining */}
+                  <div className="dropdown mt-2">
+                    <button
+                      className="btn btn-sm btn-outline-danger dropdown-toggle"
+                      type="button"
+                      id="clientDropdown"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      See More
+                    </button>
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="clientDropdown"
+                    >
+                      {[
+                        "Expand financial inclusion with agent-driven account opening, loan acquisition, registration (BVN, CAC, etc.), and CICO.",
+                        "Reach millions through policy sales and claims support powered by DDSA Insuretech.",
+                        "Drive contributions and new member enrollments at grassroots level.",
+                        "National identity schemes, subsidy delivery, and social impact projects.",
+                        "Nationwide verifications, onboarding, and customer acquisitions.",
+                        `✅ API integration & onboarding support.
+                    ✅ A dedicated Partner Dashboard.
+                    ✅ Transparent revenue sharing.`,
+                      ]
+                        .slice(3)
+                        .map((text, i) => (
+                          <li key={i}>
+                            <span className="dropdown-item small">
+                              <i className="fas fa-check-circle text-danger me-2"></i>
+                              {text}
+                            </span>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+
+                  {/* <p className="mt-3 small text-muted"></p> */}
                 </div>
               </motion.div>
             </div>
@@ -537,6 +575,7 @@ export default function Home() {
                   <h5 className="card-title text-danger fw-semibold">
                     <i className="fas fa-landmark me-2"></i> Governments
                   </h5>
+
                   <motion.ul
                     className="list-unstyled mt-3"
                     variants={listVariants}
@@ -549,17 +588,49 @@ export default function Home() {
                       "Direct citizen engagement in rural & urban communities.",
                       "National scale distribution of financial inclusion, social benefits, and insurance.",
                       "Data analytics & reporting to track impact in real-time.",
-                    ].map((text, i) => (
-                      <motion.li
-                        key={i}
-                        className="mb-2 small text-muted d-flex align-items-start"
-                        variants={itemVariants}
-                      >
-                        <i className="fas fa-check-circle text-danger me-2 mt-1"></i>
-                        {text}
-                      </motion.li>
-                    ))}
+                    ]
+                      .slice(0, 3)
+                      .map((text, i) => (
+                        <motion.li
+                          key={i}
+                          className="mb-2 small text-muted d-flex align-items-start"
+                          variants={itemVariants}
+                        >
+                          <i className="fas fa-check-circle text-danger me-2 mt-1"></i>
+                          {text}
+                        </motion.li>
+                      ))}
                   </motion.ul>
+
+                  {/* Dropdown for remaining */}
+                  <div className="dropdown mt-2">
+                    <button
+                      className="btn btn-sm btn-outline-danger dropdown-toggle"
+                      type="button"
+                      id="govDropdown"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      See More
+                    </button>
+                    <ul className="dropdown-menu" aria-labelledby="govDropdown">
+                      {[
+                        "Mass job creation programs through our agent network.",
+                        "Direct citizen engagement in rural & urban communities.",
+                        "National scale distribution of financial inclusion, social benefits, and insurance.",
+                        "Data analytics & reporting to track impact in real-time.",
+                      ]
+                        .slice(3)
+                        .map((text, i) => (
+                          <li key={i}>
+                            <span className="dropdown-item small">
+                              <i className="fas fa-check-circle text-danger me-2"></i>
+                              {text}
+                            </span>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -578,6 +649,7 @@ export default function Home() {
                   <h5 className="card-title text-danger fw-semibold">
                     <i className="fas fa-users me-2"></i> Citizens
                   </h5>
+
                   <motion.ul
                     className="list-unstyled mt-3"
                     variants={listVariants}
@@ -593,17 +665,55 @@ export default function Home() {
                       "Verify property.",
                       "Link to markets.",
                       "Enjoy reliable local services, etc.",
-                    ].map((text, i) => (
-                      <motion.li
-                        key={i}
-                        className="mb-2 small text-muted d-flex align-items-start"
-                        variants={itemVariants}
-                      >
-                        <i className="fas fa-check-circle text-danger me-2 mt-1"></i>
-                        {text}
-                      </motion.li>
-                    ))}
+                    ]
+                      .slice(0, 3)
+                      .map((text, i) => (
+                        <motion.li
+                          key={i}
+                          className="mb-2 small text-muted d-flex align-items-start"
+                          variants={itemVariants}
+                        >
+                          <i className="fas fa-check-circle text-danger me-2 mt-1"></i>
+                          {text}
+                        </motion.li>
+                      ))}
                   </motion.ul>
+
+                  <div className="dropdown mt-2">
+                    <button
+                      className="btn btn-sm btn-outline-danger dropdown-toggle"
+                      type="button"
+                      id="citizensDropdown"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      See More
+                    </button>
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="citizensDropdown"
+                    >
+                      {[
+                        "Open a bank account.",
+                        "Get insured.",
+                        "Access loans.",
+                        "Register for pensions.",
+                        "Verify property.",
+                        "Link to markets.",
+                        "Enjoy reliable local services, etc.",
+                      ]
+                        .slice(3)
+                        .map((text, i) => (
+                          <li key={i}>
+                            <span className="dropdown-item small">
+                              <i className="fas fa-check-circle text-danger me-2"></i>
+                              {text}
+                            </span>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+
                   <p className="mt-3 small text-muted">
                     All from your neighborhood agent, via mobile, Omni URL, or
                     WhatsApp.
@@ -626,6 +736,7 @@ export default function Home() {
                   <h5 className="card-title text-danger fw-semibold">
                     <i className="fas fa-building me-2"></i> Our Partnerships
                   </h5>
+
                   <motion.ul
                     className="list-unstyled mt-3"
                     variants={listVariants}
@@ -640,17 +751,53 @@ export default function Home() {
                       "Banks: Ecobank, Wema, Optimus, SunTrust, Premium Trust, FCMB, etc.",
                       "Insurance: Consolidated Hallmark Insurance (CHI), etc.",
                       "Other strategic partners across agriculture, pensions, e-commerce, hospitals, social development, etc.",
-                    ].map((text, i) => (
-                      <motion.li
-                        key={i}
-                        className="mb-2 small text-muted d-flex align-items-start"
-                        variants={itemVariants}
-                      >
-                        <i className="fas fa-check-circle text-danger me-2 mt-1"></i>
-                        {text}
-                      </motion.li>
-                    ))}
+                    ]
+                      .slice(0, 3)
+                      .map((text, i) => (
+                        <motion.li
+                          key={i}
+                          className="mb-2 small text-muted d-flex align-items-start"
+                          variants={itemVariants}
+                        >
+                          <i className="fas fa-check-circle text-danger me-2 mt-1"></i>
+                          {text}
+                        </motion.li>
+                      ))}
                   </motion.ul>
+
+                  <div className="dropdown mt-2">
+                    <button
+                      className="btn btn-sm btn-outline-danger dropdown-toggle"
+                      type="button"
+                      id="partnershipsDropdown"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      See More
+                    </button>
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="partnershipsDropdown"
+                    >
+                      {[
+                        "Federal Ministry of Youth Development.",
+                        "National Youth Council of Nigeria (NYCN).",
+                        "Federal Government of Nigeria – through NDE (National Directorate of Employment).",
+                        "Banks: Ecobank, Wema, Optimus, SunTrust, Premium Trust, FCMB, etc.",
+                        "Insurance: Consolidated Hallmark Insurance (CHI), etc.",
+                        "Other strategic partners across agriculture, pensions, e-commerce, hospitals, social development, etc.",
+                      ]
+                        .slice(3)
+                        .map((text, i) => (
+                          <li key={i}>
+                            <span className="dropdown-item small">
+                              <i className="fas fa-check-circle text-danger me-2"></i>
+                              {text}
+                            </span>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
             </div>
