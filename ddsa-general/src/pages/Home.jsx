@@ -456,7 +456,6 @@ export default function Home() {
       </section>
 
       {/* our partners */}
-
       {/* PARTNERSHIPS & SERVICES */}
       <section className="bg-white py-5" id="services">
         <div className="container">
@@ -490,8 +489,6 @@ export default function Home() {
                   <h5 className="card-title text-danger fw-semibold">
                     <i className="fas fa-handshake me-2"></i> Client Partners
                   </h5>
-
-                  {/* First 3 visible */}
                   <motion.ul
                     className="list-unstyled mt-3"
                     variants={listVariants}
@@ -500,11 +497,11 @@ export default function Home() {
                     viewport={{ once: true }}
                   >
                     {[
-                      "Expand financial inclusion with agent-driven account opening, loan acquisition, registration (BVN, CAC, etc.), and CICO.",
-                      "Reach millions through policy sales and claims support powered by DDSA Insuretech.",
-                      "Drive contributions and new member enrollments at grassroots level.",
-                      "National identity schemes, subsidy delivery, and social impact projects.",
-                      "Nationwide verifications, onboarding, and customer acquisitions.",
+                      "Expand financial inclusion with agent-driven services.",
+                      "Reach millions through DDSA Insuretech.",
+                      "Drive grassroots member enrollments.",
+                      "National identity schemes and subsidy delivery.",
+                      "Nationwide verifications and acquisitions.",
                     ]
                       .slice(0, 3)
                       .map((text, i) => (
@@ -518,8 +515,6 @@ export default function Home() {
                         </motion.li>
                       ))}
                   </motion.ul>
-
-                  {/* Dropdown for remaining */}
                   <div className="dropdown mt-2">
                     <button
                       className="btn btn-sm btn-outline-danger dropdown-toggle"
@@ -535,14 +530,11 @@ export default function Home() {
                       aria-labelledby="clientDropdown"
                     >
                       {[
-                        "Expand financial inclusion with agent-driven account opening, loan acquisition, registration (BVN, CAC, etc.), and CICO.",
-                        "Reach millions through policy sales and claims support powered by DDSA Insuretech.",
-                        "Drive contributions and new member enrollments at grassroots level.",
-                        "National identity schemes, subsidy delivery, and social impact projects.",
-                        "Nationwide verifications, onboarding, and customer acquisitions.",
-                        `✅ API integration & onboarding support.
-                    ✅ A dedicated Partner Dashboard.
-                    ✅ Transparent revenue sharing.`,
+                        "Expand financial inclusion with agent-driven services.",
+                        "Reach millions through DDSA Insuretech.",
+                        "Drive grassroots member enrollments.",
+                        "National identity schemes and subsidy delivery.",
+                        "Nationwide verifications and acquisitions.",
                       ]
                         .slice(3)
                         .map((text, i) => (
@@ -555,8 +547,6 @@ export default function Home() {
                         ))}
                     </ul>
                   </div>
-
-                  {/* <p className="mt-3 small text-muted"></p> */}
                 </div>
               </motion.div>
             </div>
@@ -575,7 +565,6 @@ export default function Home() {
                   <h5 className="card-title text-danger fw-semibold">
                     <i className="fas fa-landmark me-2"></i> Governments
                   </h5>
-
                   <motion.ul
                     className="list-unstyled mt-3"
                     variants={listVariants}
@@ -584,10 +573,10 @@ export default function Home() {
                     viewport={{ once: true }}
                   >
                     {[
-                      "Mass job creation programs through our agent network.",
-                      "Direct citizen engagement in rural & urban communities.",
-                      "National scale distribution of financial inclusion, social benefits, and insurance.",
-                      "Data analytics & reporting to track impact in real-time.",
+                      "Mass job creation programs.",
+                      "Direct citizen engagement.",
+                      "Nationwide distribution of social benefits.",
+                      "Real-time impact reporting.",
                     ]
                       .slice(0, 3)
                       .map((text, i) => (
@@ -601,8 +590,6 @@ export default function Home() {
                         </motion.li>
                       ))}
                   </motion.ul>
-
-                  {/* Dropdown for remaining */}
                   <div className="dropdown mt-2">
                     <button
                       className="btn btn-sm btn-outline-danger dropdown-toggle"
@@ -615,10 +602,10 @@ export default function Home() {
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="govDropdown">
                       {[
-                        "Mass job creation programs through our agent network.",
-                        "Direct citizen engagement in rural & urban communities.",
-                        "National scale distribution of financial inclusion, social benefits, and insurance.",
-                        "Data analytics & reporting to track impact in real-time.",
+                        "Mass job creation programs.",
+                        "Direct citizen engagement.",
+                        "Nationwide distribution of social benefits.",
+                        "Real-time impact reporting.",
                       ]
                         .slice(3)
                         .map((text, i) => (
@@ -649,7 +636,6 @@ export default function Home() {
                   <h5 className="card-title text-danger fw-semibold">
                     <i className="fas fa-users me-2"></i> Citizens
                   </h5>
-
                   <motion.ul
                     className="list-unstyled mt-3"
                     variants={listVariants}
@@ -662,9 +648,7 @@ export default function Home() {
                       "Get insured.",
                       "Access loans.",
                       "Register for pensions.",
-                      "Verify property.",
-                      "Link to markets.",
-                      "Enjoy reliable local services, etc.",
+                      "Verify property & link to markets.",
                     ]
                       .slice(0, 3)
                       .map((text, i) => (
@@ -678,7 +662,6 @@ export default function Home() {
                         </motion.li>
                       ))}
                   </motion.ul>
-
                   <div className="dropdown mt-2">
                     <button
                       className="btn btn-sm btn-outline-danger dropdown-toggle"
@@ -698,9 +681,7 @@ export default function Home() {
                         "Get insured.",
                         "Access loans.",
                         "Register for pensions.",
-                        "Verify property.",
-                        "Link to markets.",
-                        "Enjoy reliable local services, etc.",
+                        "Verify property & link to markets.",
                       ]
                         .slice(3)
                         .map((text, i) => (
@@ -713,10 +694,8 @@ export default function Home() {
                         ))}
                     </ul>
                   </div>
-
                   <p className="mt-3 small text-muted">
-                    All from your neighborhood agent, via mobile, Omni URL, or
-                    WhatsApp.
+                    All from your neighborhood agent, via mobile or WhatsApp.
                   </p>
                 </div>
               </motion.div>
@@ -736,7 +715,6 @@ export default function Home() {
                   <h5 className="card-title text-danger fw-semibold">
                     <i className="fas fa-building me-2"></i> Our Partnerships
                   </h5>
-
                   <motion.ul
                     className="list-unstyled mt-3"
                     variants={listVariants}
@@ -746,11 +724,9 @@ export default function Home() {
                   >
                     {[
                       "Federal Ministry of Youth Development.",
-                      "National Youth Council of Nigeria (NYCN).",
-                      "Federal Government of Nigeria – through NDE (National Directorate of Employment).",
-                      "Banks: Ecobank, Wema, Optimus, SunTrust, Premium Trust, FCMB, etc.",
-                      "Insurance: Consolidated Hallmark Insurance (CHI), etc.",
-                      "Other strategic partners across agriculture, pensions, e-commerce, hospitals, social development, etc.",
+                      "National Youth Council of Nigeria.",
+                      "Banks & Insurance partners.",
+                      "Other strategic sectors.",
                     ]
                       .slice(0, 3)
                       .map((text, i) => (
@@ -764,7 +740,6 @@ export default function Home() {
                         </motion.li>
                       ))}
                   </motion.ul>
-
                   <div className="dropdown mt-2">
                     <button
                       className="btn btn-sm btn-outline-danger dropdown-toggle"
@@ -781,11 +756,9 @@ export default function Home() {
                     >
                       {[
                         "Federal Ministry of Youth Development.",
-                        "National Youth Council of Nigeria (NYCN).",
-                        "Federal Government of Nigeria – through NDE (National Directorate of Employment).",
-                        "Banks: Ecobank, Wema, Optimus, SunTrust, Premium Trust, FCMB, etc.",
-                        "Insurance: Consolidated Hallmark Insurance (CHI), etc.",
-                        "Other strategic partners across agriculture, pensions, e-commerce, hospitals, social development, etc.",
+                        "National Youth Council of Nigeria.",
+                        "Banks & Insurance partners.",
+                        "Other strategic sectors.",
                       ]
                         .slice(3)
                         .map((text, i) => (
