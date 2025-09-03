@@ -213,8 +213,9 @@ export default function Home() {
             >
               <h2 className="fw-bold mb-3">About Us</h2>
               <p>
-                DDSA (Direct Digital Sales Agent), developed by D-Degree Digital
-                Hub, is Africa’s first multi-sector digital agent system.
+                DDSA (Direct Digital Sales Agent), developed by Direct Digital
+                Sales Agent Limited (DDSAL), is Africa’s first multi-sector
+                digital agent system.
               </p>
 
               <div className="row mt-4 g-3">
@@ -705,7 +706,7 @@ export default function Home() {
                   <Quote size={32} className="text-danger mb-3" />
                   <p className="text-muted">"{t.text}"</p>
                   <div className="d-flex align-items-center justify-content-center mt-3">
-                    <img
+                    {/* <img
                       src={t.img}
                       alt={t.name}
                       className="rounded-circle me-3"
@@ -714,7 +715,7 @@ export default function Home() {
                         height: "50px",
                         objectFit: "cover",
                       }}
-                    />
+                    /> */}
                     <div className="text-start">
                       <h6 className="mb-0 fw-bold">{t.name}</h6>
                       <small className="text-secondary">{t.role}</small>
