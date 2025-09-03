@@ -91,7 +91,7 @@ export default function Home() {
         <div className="container">
           <div className="row align-items-center g-4">
             {/* TEXT */}
-            <div className="col-lg-6 text-center text-lg-start">
+            <div className="col-lg-6  text-center text-lg-start">
               <motion.h1
                 className="display-5 fw-bold text-danger"
                 initial={{ y: 30, opacity: 0 }}
@@ -100,32 +100,34 @@ export default function Home() {
               >
                 Direct Digital Sales Agent
               </motion.h1>
+              {/* border-start border-4 border-danger */}
 
-              <motion.h2
-                className="h4 fw-bold border-start border-4 border-danger ps-3 mt-3 text-dark"
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.1, duration: 0.6 }}
-              >
-                All-Sector Agent Network System
-              </motion.h2>
+              <div className="border-start border-4 border-danger">
+                <motion.h2
+                  className="h4 fw-bold mb-0  ps-3 mt-3 text-dark"
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.1, duration: 0.6 }}
+                >
+                  All-Sector Agent Network System
+                </motion.h2>
+                <motion.p
+                  className="mx-3 mt-0 mb-0 fst-italic fs-5 text-danger"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  All Sectors, One Dashboard <br />
+                </motion.p>
+              </div>
               <motion.p
-                className=" mt-1 mx-3 fs-5 fw-bold text-danger"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                All Sectors, One Dashboard <br />
-              </motion.p>
-              <motion.p
-                className=" h5 fw-bold fs-5 mt-1 text-dark"
+                className="   fs-5 mt-3 text-dark"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
                 Empowering People. Driving Growth. Creating Jobs. <br />
               </motion.p>
-
               <motion.div
                 className="mt-4 d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start"
                 variants={fadeInUp}
@@ -632,6 +634,8 @@ export default function Home() {
                     viewport={{ once: true }}
                   >
                     {[
+                      "Federal Ministry of Youth Development.",
+                      "National Youth Council of Nigeria (NYCN).",
                       "Federal Government of Nigeria – through NDE (National Directorate of Employment).",
                       "Banks: Ecobank, Wema, Optimus, SunTrust, Premium Trust, FCMB, etc.",
                       "Insurance: Consolidated Hallmark Insurance (CHI), etc.",
