@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { Cpu, Users, Award, Quote , Building } from "lucide-react";
-
-
+import CountUp from "react-countup";
 
 import heroImg from "../assets/Office work-amico.svg";
 import aboutImg from "../assets/Group-pana.svg";
@@ -266,19 +265,44 @@ export default function Home() {
           <div className="row g-4">
             <div className="col-md-3 col-6">
               <Award size={40} className="text-danger mb-2" />
-              <p className="fw-semibold">20+ Awards</p>
+              <p className="fw-semibold">
+                {" "}
+                <div className="d-flex justify-content-center align-items-center fs-5">
+                  <div className="text-pulse">
+                    {" "}
+                    <CountUp end={20} duration={5} separator="," />
+                  </div>
+                  + Awards
+                </div>
+              </p>
             </div>
             <div className="col-md-3 col-6">
               <Building size={40} className="text-danger mb-2" />
-              <p className="fw-semibold">50+ Clients</p>
+              <p className="fw-semibold">
+                <div className="d-flex justify-content-center align-items-center fs-5">
+                  {" "}
+                  <div className="text-pulse">
+                    <CountUp end={50} duration={5} separator="," />
+                  </div>
+                  + Clients
+                </div>
+              </p>
             </div>
             <div className="col-md-3 col-6">
               <Users size={40} className="text-danger mb-2" />
-              <p className="fw-semibold">100+ Projects</p>
+              <p className="fw-semibold">
+                <div className="d-flex justify-content-center align-items-center fs-5">
+                  {" "}
+                  <div className="text-pulse">
+                    <CountUp end={100} duration={5} separator="," />
+                  </div>
+                  + Projects
+                </div>
+              </p>
             </div>
             <div className="col-md-3 col-6">
               <Cpu size={40} className="text-danger mb-2" />
-              <p className="fw-semibold">Innovative Solutions</p>
+              <p className="fw-semibold fs-5">Innovative Solutions</p>
             </div>
           </div>
         </div>
@@ -422,19 +446,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* our partners */}
 
-
-
-
-
-{/* our partners */}
-
-
-
-
-
-
-{/* PARTNERSHIPS & SERVICES */}
+      {/* PARTNERSHIPS & SERVICES */}
       <section className="bg-white py-5" id="services">
         <div className="container">
           <motion.h2
@@ -474,14 +488,19 @@ export default function Home() {
                       "National identity schemes, subsidy delivery, and social impact projects.",
                       "Nationwide verifications, onboarding, and customer acquisitions.",
                     ].map((text, i) => (
-                      <motion.li key={i} className="mb-2 small" variants={itemVariants}>
+                      <motion.li
+                        key={i}
+                        className="mb-2 small"
+                        variants={itemVariants}
+                      >
                         {text}
                       </motion.li>
                     ))}
                   </motion.ul>
                   <p className="mt-3 small text-danger">
                     ✅ API integration & onboarding support.
-                    <br />✅ A dedicated Partner Dashboard to monitor performance.
+                    <br />✅ A dedicated Partner Dashboard to monitor
+                    performance.
                     <br />✅ Transparent revenue sharing.
                   </p>
                 </div>
@@ -514,7 +533,11 @@ export default function Home() {
                       "National scale distribution of financial inclusion, social benefits, and insurance.",
                       "Data analytics & reporting to track impact in real-time.",
                     ].map((text, i) => (
-                      <motion.li key={i} className="mb-2 small" variants={itemVariants}>
+                      <motion.li
+                        key={i}
+                        className="mb-2 small"
+                        variants={itemVariants}
+                      >
                         {text}
                       </motion.li>
                     ))}
@@ -552,7 +575,11 @@ export default function Home() {
                       "Link to markets.",
                       "Enjoy reliable local services, etc.",
                     ].map((text, i) => (
-                      <motion.li key={i} className="mb-2 small" variants={itemVariants}>
+                      <motion.li
+                        key={i}
+                        className="mb-2 small"
+                        variants={itemVariants}
+                      >
                         {text}
                       </motion.li>
                     ))}
@@ -591,7 +618,11 @@ export default function Home() {
                       "Insurance: Consolidated Hallmark Insurance (CHI), etc.",
                       "Other strategic partners across agriculture, pensions, e-commerce, hospitals, social development, etc.",
                     ].map((text, i) => (
-                      <motion.li key={i} className="mb-2 small" variants={itemVariants}>
+                      <motion.li
+                        key={i}
+                        className="mb-2 small"
+                        variants={itemVariants}
+                      >
                         {text}
                       </motion.li>
                     ))}
@@ -602,9 +633,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
-
 
       {/* CONTACT */}
       <section id="contact" className="py-5 bg-white text-danger">
