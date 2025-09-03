@@ -6,10 +6,11 @@ import { Menu } from "lucide-react";
 const NAV_ITEMS = [
   { name: "Home", id: "home" },
   { name: "About Us", id: "about" },
+  { name: "Achievements", id: "achievements" },
   { name: "Sectors", id: "sectors" },
-  { name: "Stakeholders", id: "stakeholders" },
-  { name: "Partnerships", id: "partnerships" },
   { name: "Technology", id: "technology" },
+  { name: "Partnerships", id: "services" },
+  { name: "Testimonials", id: "testimonials" },
   { name: "Contact", id: "contact" },
 ];
 
@@ -17,6 +18,7 @@ export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("home");
+  // eslint-disable-next-line no-unused-vars
   const [isHome, setIsHome] = useState(location.pathname === "/");
 
   useEffect(() => setIsHome(location.pathname === "/"), [location.pathname]);
@@ -39,6 +41,7 @@ export default function Header() {
   );
 
   const handleNavClick = (id) => {
+    // close bootstrap collapse if open
     const collapseEl = document.getElementById("navbarNav");
     if (collapseEl?.classList.contains("show") && window.bootstrap) {
       new window.bootstrap.Collapse(collapseEl).hide();
@@ -46,6 +49,7 @@ export default function Header() {
 
     if (location.pathname !== "/") {
       navigate("/", { replace: false });
+      // wait for home to mount
       requestAnimationFrame(() => {
         setTimeout(() => smoothScrollTo(id), 260);
       });
@@ -126,6 +130,11 @@ export default function Header() {
               </li>
             ))}
           </ul>
+
+          {/* <div className="d-flex">
+            <Link className="btn btn-outline-danger fw-semibold px-3 me-2 custom-btn" to="/login">Log in</Link>
+            <Link className="btn btn-danger fw-semibold px-3 custom-btn" to="/signup">Sign Up</Link>
+          </div> */}
         </div>
       </div>
     </nav>

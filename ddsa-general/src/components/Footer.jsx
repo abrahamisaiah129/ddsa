@@ -1,9 +1,13 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Twitter, Facebook, Linkedin } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 export default function Footer() {
+  const [hoveredFooter, setHoveredFooter] = useState(null);
+
   const ScrollMaybe = ({ to, children }) => (
     <ScrollLink
       to={to}
@@ -75,10 +79,23 @@ export default function Footer() {
 
           {/* CTA + Socials */}
           <div className="col-md-3 text-md-end">
-            <h6 className="text-uppercase fw-bold mb-2">Become an Partner</h6>
-            <a className="btn btn-danger btn-sm mt-2" href="/signup">
+            <h6 className="text-uppercase fw-bold mb-2">Become a Partner</h6>
+            <motion.a
+              href="mailto:info@ddsa-live.com"
+              className={`btn ${
+                hoveredFooter === "partnerFooter"
+                  ? "btn-danger text-light"
+                  : "btn-outline-danger text-danger"
+              } fw-semibold mt-2`}
+              onHoverStart={() => setHoveredFooter("partnerFooter")}
+              onHoverEnd={() => setHoveredFooter(null)}
+              whileHover={{
+                scale: 1.1,
+                boxShadow: "0px 0px 8px rgba(220, 53, 69, 0.6)",
+              }}
+            >
               Onboard Now
-            </a>
+            </motion.a>
             <div className="d-flex justify-content-md-end justify-content-start gap-3 mt-3">
               <a href="#" className="text-light" aria-label="Twitter">
                 <Twitter size={18} />

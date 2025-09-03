@@ -1,0 +1,292 @@
+   {/* Partnerships */}
+      <section id="partnerships" className="py-5 bg-white">
+        <div className="container">
+          <div className="row align-items-center g-5">
+            <motion.div
+              className={`col-md-6 ${illustrationWrapper}`}
+              initial="hidden"
+              whileInView="show"
+              variants={fadeInUp}
+            >
+              <img
+                src={PartnerImg}
+                alt="Partnership Illustration"
+                className={illustrationStyle}
+              />
+            </motion.div>
+
+            <motion.div
+              className="col-md-6 text-center text-md-start"
+              initial="hidden"
+              whileInView="show"
+              variants={fadeInUp}
+            >
+              <h2 className="fw-bold mb-4 text-danger">Our Partnerships</h2>
+              <p className="mb-4 text-muted">
+                We collaborate with trusted partners across sectors to drive
+                innovation, create jobs, and expand financial inclusion in
+                Africa.
+              </p>
+              <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
+                {[
+                  "Federal Government (NDE)",
+                  "Ecobank",
+                  "Wema",
+                  "SunTrust",
+                  "Premium Trust",
+                  "FCMB",
+                  "CHI Insurance",
+                  "More…",
+                ].map((partner, i) => (
+                  <span
+                    key={i}
+                    className="badge rounded-pill bg-danger-subtle text-danger fw-semibold px-3 py-2"
+                  >
+                    {partner}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* Partnerships & Services */}
+      <section className="bg-light py-5" id="services">
+        <div className="container">
+          <motion.h2
+            className="text-center fw-bold text-danger mb-5"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            Partnerships & Services
+          </motion.h2>
+          <div className="row g-4">
+            {/* Client Partners */}
+            <div className="col-md-6 col-lg-3">
+              <motion.div
+                className="card shadow-lg rounded-3 border-top border-4 border-danger h-100"
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+              >
+                <div className="card-body">
+                  <h5 className="card-title text-danger">
+                    <i className="fas fa-handshake me-2"></i> Client Partners
+                  </h5>
+                  <motion.ul
+                    className="list-unstyled mt-3"
+                    variants={listVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                  >
+                    {[
+                      "Expand financial inclusion with agent-driven account opening, loan acquisition, registration (BVN, CAC, etc.), and CICO.",
+                      "Reach millions through policy sales and claims support powered by DDSA Insuretech.",
+                      "Drive contributions and new member enrollments at grassroots level.",
+                      "National identity schemes, subsidy delivery, and social impact projects.",
+                      "Nationwide verifications, onboarding, and customer acquisitions.",
+                    ].map((text, i) => (
+                      <motion.li key={i} className="mb-2" variants={itemVariants}>
+                        {text}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                  <p className="mt-3">
+                    ✅ API integration & onboarding support.
+                    <br />✅ A dedicated Partner Dashboard to monitor performance.
+                    <br />✅ Transparent revenue sharing.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Governments */}
+            <div className="col-md-6 col-lg-3">
+              <motion.div
+                className="card shadow-lg rounded-3 border-top border-4 border-danger h-100"
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+              >
+                <div className="card-body">
+                  <h5 className="card-title text-danger">
+                    <i className="fas fa-landmark me-2"></i> Governments
+                  </h5>
+                  <motion.ul
+                    className="list-unstyled mt-3"
+                    variants={listVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                  >
+                    {[
+                      "Mass job creation programs through our agent network.",
+                      "Direct citizen engagement in rural & urban communities.",
+                      "National scale distribution of financial inclusion, social benefits, and insurance.",
+                      "Data analytics & reporting to track impact in real-time.",
+                    ].map((text, i) => (
+                      <motion.li key={i} className="mb-2" variants={itemVariants}>
+                        {text}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Citizens */}
+            <div className="col-md-6 col-lg-3">
+              <motion.div
+                className="card shadow-lg rounded-3 border-top border-4 border-danger h-100"
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+              >
+                <div className="card-body">
+                  <h5 className="card-title text-danger">
+                    <i className="fas fa-users me-2"></i> Citizens
+                  </h5>
+                  <motion.ul
+                    className="list-unstyled mt-3"
+                    variants={listVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                  >
+                    {[
+                      "Open a bank account.",
+                      "Get insured.",
+                      "Access loans.",
+                      "Register for pensions.",
+                      "Verify property.",
+                      "Link to markets.",
+                      "Enjoy reliable local services, etc.",
+                    ].map((text, i) => (
+                      <motion.li key={i} className="mb-2" variants={itemVariants}>
+                        {text}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                  <p className="mt-3">
+                    All from your neighborhood agent, via mobile, Omni URL, or
+                    WhatsApp.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Our Partnerships */}
+            <div className="col-md-6 col-lg-3">
+              <motion.div
+                className="card shadow-lg rounded-3 border-top border-4 border-danger h-100"
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+              >
+                <div className="card-body">
+                  <h5 className="card-title text-danger">
+                    <i className="fas fa-building me-2"></i> Our Partnerships
+                  </h5>
+                  <motion.ul
+                    className="list-unstyled mt-3"
+                    variants={listVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                  >
+                    {[
+                      "Federal Government of Nigeria – through NDE (National Directorate of Employment).",
+                      "Banks: Ecobank, Wema, Optimus, SunTrust, Premium Trust, FCMB, etc.",
+                      "Insurance: Consolidated Hallmark Insurance (CHI), etc.",
+                      "Other strategic partners across agriculture, pensions, e-commerce, hospitals, social development, etc.",
+                    ].map((text, i) => (
+                      <motion.li key={i} className="mb-2" variants={itemVariants}>
+                        {text}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>

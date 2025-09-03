@@ -20,7 +20,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: "84px" }}>
+      <main style={{ paddingTop: "75px" }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
