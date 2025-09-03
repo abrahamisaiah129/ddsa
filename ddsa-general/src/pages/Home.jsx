@@ -503,7 +503,7 @@ export default function Home() {
                       "National identity schemes and subsidy delivery.",
                       "Nationwide verifications and acquisitions.",
                     ]
-                      .slice(0, 3)
+                      .slice(0, 2)
                       .map((text, i) => (
                         <motion.li
                           key={i}
@@ -682,6 +682,7 @@ export default function Home() {
                         "Access loans.",
                         "Register for pensions.",
                         "Verify property & link to markets.",
+                        "All from your neighborhood agent, via mobile or WhatsApp.",
                       ]
                         .slice(3)
                         .map((text, i) => (
@@ -694,9 +695,8 @@ export default function Home() {
                         ))}
                     </ul>
                   </div>
-                  <p className="mt-3 small text-muted">
-                    All from your neighborhood agent, via mobile or WhatsApp.
-                  </p>
+                  {/* <p className="mt-3 small text-muted">
+                  </p> */}
                 </div>
               </motion.div>
             </div>
