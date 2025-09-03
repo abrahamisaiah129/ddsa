@@ -117,8 +117,6 @@ export default function Home() {
                 transition={{ delay: 0.3 }}
               >
                 Empowering People. Driving Growth. Creating Jobs. <br />
-                Vision: <strong>50M jobs in Nigeria</strong> &{" "}
-                <strong>350M in Africa</strong> in 5 years.
               </motion.p>
 
               <motion.div
